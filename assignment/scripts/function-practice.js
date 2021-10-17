@@ -48,31 +48,67 @@ function isPositive( number ) {
 console.log( 'isPositive - should say true', isPositive(3) );
 console.log( 'isPositive - should say false', isPositive(0) );
 console.log( 'isPositive - should say false', isPositive(-3) );
+console.log( isPositive(3));
+console.log( isPositive(0));
+console.log( isPositive(-3));
 
 
 // 6. Function to return the _last_ item in an array. If the
 //    array is empty, return `undefined`.
-function getLast( array ) {
-
+ let array = [1, 8, 9, 12, 14]
+// let array = []
+function getLast( arr ) {
+  if ( arr.length ) return arr.slice(-1)
+  else return undefined
 }
+let ans = getLast(array)
+console.log(ans);
 
 // 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find
 function find( value, array ){
-
+  let found = false
+  for ( let x=0; x<array.length; x++ ) {
+    if (array[x] === value) found = true
+  }
+  return found
 }
-
+let arr = [1,2,3,4,5]
+let val = 6
+let answer = find(val, arr)
+console.log(answer);
 // ----------------------
 // Stretch Goals
 // ----------------------
 // 8. Function to check if a letter is the first letter in a
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-
+  if (string.charAt(0) === letter) return true
+ else if (string.charAt(0) !== letter) return false
 }
+let fruit = 'apple'
+let alphabet = 'a'
+let answer1 = isFirstLetter(alphabet, fruit)
+console.log(answer1, 'ans');
 console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
+
+function isFirstLet( letter, string ) {
+  for ( let x=0; x<string.length;x++ ) {
+if ( console.log(string[x]) === letter ) return true
+else return false
+  }
+}
+let apple = 'apple'
+let lett = 'z'
+let arrays = apple.split('')
+console.log(arrays)
+let answer2 = isFirstLet( lett, arrays )
+console.log(answer2, 'a2')
+console.log([...apple], '...')
+console.log(Array.from(apple), 'from')
+console.log(Object.assign([], apple), 'obj')
 
 // 9. Function to return the sum of all numbers in an array
 function sumAll( ) {
